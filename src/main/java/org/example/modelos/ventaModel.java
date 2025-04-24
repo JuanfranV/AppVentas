@@ -15,7 +15,7 @@ public class ventaModel {
     public ventaModel() {
     }
 
-    public int getId() {
+    public int getId() { 
         return id;
     }
 

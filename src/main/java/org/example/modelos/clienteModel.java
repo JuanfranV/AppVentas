@@ -4,13 +4,11 @@ public class clienteModel {
 
     private int id;
     private String nombre;
-    private String email;
     private String telefono;
 
-    public clienteModel(int id, String nombre, String email, String telefono) {
+    public clienteModel(int id, String nombre, String telefono) {
         this.id = id;
         this.nombre = nombre;
-        this.email = email;
         this.telefono = telefono;
     }
 
@@ -31,14 +29,6 @@ public class clienteModel {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getTelefono() {

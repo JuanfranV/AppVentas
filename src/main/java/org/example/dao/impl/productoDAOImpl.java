@@ -3,7 +3,6 @@ package org.example.dao.impl;
 import org.example.dao.productoDAO;
 import org.example.modelos.productoModel;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +39,7 @@ public class productoDAOImpl implements productoDAO {
 
     @Override
     public List<productoModel> listaTodos(){
+
         return new ArrayList<>(productos);
     }
 }
