@@ -1,8 +1,11 @@
 package org.example.vistas;
 
 import com.formdev.flatlaf.FlatLightLaf;
+import org.example.vistas.clienteVista.clienteFormulario;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class menuFormulario extends JDialog{
     private JPanel panelmenu;
@@ -14,6 +17,14 @@ public class menuFormulario extends JDialog{
         setSize(600,400);
         setLocationRelativeTo(null);
         setContentPane(panelmenu);
+
+        buttonClientes.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clienteFormulario clienteFormulario = new clienteFormulario();
+                clienteFormulario.setVisible(true);
+            }
+        });
     }
 
     public static void main(String[] args){
@@ -25,8 +36,5 @@ public class menuFormulario extends JDialog{
 
         menuFormulario dialog = new menuFormulario();
         dialog.setVisible(true);
-
-
-
     }
 }

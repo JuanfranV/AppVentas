@@ -1,4 +1,4 @@
-package org.example.vistas;
+package org.example.vistas.clienteVista;
 
 import javax.swing.*;
 
@@ -13,13 +13,15 @@ public class clienteFormulario extends JDialog{
     private JTextField txtNombre;
     private JButton buttonEditar;
     private JButton buttonEliminar;
-    private JTextField textField1;
+    private JTextField txtEdOEl;
 
     public clienteFormulario () {
         setContentPane(panelCliente);
-        setModal(true);
         setSize(600, 400);
         setLocationRelativeTo(null);
+        setModal(true);
+
+
     }
 
     public static void main(String [] args){
