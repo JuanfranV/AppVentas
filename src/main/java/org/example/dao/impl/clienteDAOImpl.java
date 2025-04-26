@@ -28,7 +28,8 @@ public class clienteDAOImpl implements clienteDAO {
         clienteModel existencia = leer(clienteModel.getId());
         if (existencia != null){
             existencia.setNombre(clienteModel.getNombre());
-
+            existencia.setNombre(clienteModel.getTelefono());
+            actualizar(existencia);
         }
     }
 

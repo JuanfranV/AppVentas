@@ -29,8 +29,6 @@ public class clienteFormulario extends JDialog{
         setContentPane(panelCliente);
         setSize(900, 600);
         setLocationRelativeTo(null);
-        setModal(true);
-
 
         buttonVolver.addActionListener(new ActionListener() {
             @Override
@@ -69,6 +67,57 @@ public class clienteFormulario extends JDialog{
                 txtId.setText("");
                 txtNombre.setText("");
                 txtTelefono.setText("");
+            }
+        });
+
+        buttonEliminar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clienteDAOImpl.eliminar(Integer.parseInt(txtEdOEl.getText()));
+
+                DefaultTableModel model = new DefaultTableModel();
+                model.addColumn("Id");
+                model.addColumn("Nombre");
+                model.addColumn("Teléfono");
+
+                if (clienteDAOImpl.listaTodos() != null){
+                    for (clienteModel fila: clienteDAOImpl.listaTodos()){
+                        model.addRow(new Object[]{
+                                fila.getId(),
+                                fila.getNombre(),
+                                fila.getTelefono()
+                        });
+                    }
+                }
+
+                table1.setModel(model);
+                txtEdOEl.setText("");
+                JOptionPane.showMessageDialog(null, "Se eliminó de la lista", "Sistema", JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
+
+        buttonEditar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clienteEditar clienteEditar = new clienteEditar();
+                clienteEditar.setVisible(true);
+                setVisible(false);
+                clienteModel.setId(Integer.parseInt(txtEdOEl.getText()));
+
+                DefaultTableModel model = new DefaultTableModel();
+                model.addColumn("Id");
+                model.addColumn("Nombre");
+                model.addColumn("Teléfono");
+
+                if (clienteDAOImpl.listaTodos() != null){
+                    for (clienteModel fila: clienteDAOImpl.listaTodos()){
+                        model.addRow(new Object[]{
+                                fila.getId(),
+                                fila.getNombre(),
+                                fila.getTelefono()
+                        });
+                    }
+                }
             }
         });
     }

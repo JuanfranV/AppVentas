@@ -20,7 +20,6 @@ public class ventaFormulario extends JDialog{
         setContentPane(panelVenta);
         setSize(900, 600);
         setLocationRelativeTo(null);
-        setModal(true);
 
 
     }
