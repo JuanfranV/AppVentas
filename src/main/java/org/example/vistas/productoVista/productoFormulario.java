@@ -17,7 +17,7 @@ public class productoFormulario extends JDialog{
 
     public productoFormulario(){
         setContentPane(panelProducto);
-        setSize(600, 400);
+        setSize(900, 600);
         setLocationRelativeTo(null);
         setModal(true);
 

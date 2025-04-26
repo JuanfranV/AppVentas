@@ -23,7 +23,7 @@
         </constraints>
         <properties>
           <font size="20"/>
-          <text value="Button"/>
+          <text value="Clientes"/>
         </properties>
       </component>
       <component id="7b21f" class="javax.swing.JButton" binding="buttonProductos">
@@ -32,7 +32,7 @@
         </constraints>
         <properties>
           <font size="20"/>
-          <text value="Button"/>
+          <text value="Productos"/>
         </properties>
       </component>
       <component id="fe5a4" class="javax.swing.JButton" binding="buttonVentas">
@@ -41,7 +41,7 @@
         </constraints>
         <properties>
           <font size="20"/>
-          <text value="Button"/>
+          <text value="Ventas"/>
         </properties>
       </component>
       <vspacer id="b8a55">

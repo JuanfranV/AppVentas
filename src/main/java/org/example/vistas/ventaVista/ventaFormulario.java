@@ -13,10 +13,12 @@ public class ventaFormulario extends JDialog{
     private JButton buttonEditar;
     private JButton buttonEliminar;
     private JTextField txtEdOEl;
+    private JButton buttonListarProductos;
+    private JButton buttonListarVentas;
 
     public ventaFormulario (){
         setContentPane(panelVenta);
-        setSize(600, 400);
+        setSize(900, 600);
         setLocationRelativeTo(null);
         setModal(true);
 
