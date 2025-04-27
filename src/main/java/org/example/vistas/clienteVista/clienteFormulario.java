@@ -20,7 +20,6 @@ public class clienteFormulario extends JDialog{
     private JTextField txtNombre;
     private JButton buttonEditar;
     private JButton buttonEliminar;
-    private JTextField txtEdOEl;
 
     private clienteDAOImpl clienteDAOImpl = new clienteDAOImpl();
     private clienteModel clienteModel = new clienteModel();
@@ -73,7 +72,7 @@ public class clienteFormulario extends JDialog{
         buttonEliminar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                clienteDAOImpl.eliminar(Integer.parseInt(txtEdOEl.getText()));
+                clienteDAOImpl.eliminar(Integer.parseInt(txtId.getText()));
 
                 DefaultTableModel model = new DefaultTableModel();
                 model.addColumn("Id");
@@ -91,7 +90,9 @@ public class clienteFormulario extends JDialog{
                 }
 
                 table1.setModel(model);
-                txtEdOEl.setText("");
+                txtId.setText("");
+                txtNombre.setText("");
+                txtTelefono.setText("");
                 JOptionPane.showMessageDialog(null, "Se eliminó de la lista", "Sistema", JOptionPane.INFORMATION_MESSAGE);
             }
         });
@@ -99,10 +100,10 @@ public class clienteFormulario extends JDialog{
         buttonEditar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                clienteEditar clienteEditar = new clienteEditar();
-                clienteEditar.setVisible(true);
-                setVisible(false);
-                clienteModel.setId(Integer.parseInt(txtEdOEl.getText()));
+                clienteModel.setId(Integer.parseInt(txtId.getText()));
+                clienteModel.setNombre(txtNombre.getText());
+                clienteModel.setTelefono(txtTelefono.getText());
+                clienteDAOImpl.actualizar(clienteModel);
 
                 DefaultTableModel model = new DefaultTableModel();
                 model.addColumn("Id");
@@ -118,6 +119,11 @@ public class clienteFormulario extends JDialog{
                         });
                     }
                 }
+
+                table1.setModel(model);
+                txtId.setText("");
+                txtNombre.setText("");
+                txtTelefono.setText("");
             }
         });
     }

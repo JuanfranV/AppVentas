@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ventaDAOImpl implements ventaDAO {
 
-    private List<ventaModel> ventas = new ArrayList<>();
+    private static List<ventaModel> ventas = new ArrayList<>();
 
     @Override
     public void crear(ventaModel ventaModel){

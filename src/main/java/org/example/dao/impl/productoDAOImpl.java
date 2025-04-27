@@ -8,7 +8,7 @@ import java.util.List;
 
 public class productoDAOImpl implements productoDAO {
 
-    private List<productoModel> productos = new ArrayList<>();
+    private static List<productoModel> productos = new ArrayList<>();
 
     @Override
     public void crear(productoModel productoModel){

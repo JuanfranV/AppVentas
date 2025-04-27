@@ -8,7 +8,7 @@ import java.util.List;
 
 public class clienteDAOImpl implements clienteDAO {
 
-    private List<clienteModel> clientes = new ArrayList<>();
+    private static List<clienteModel> clientes = new ArrayList<>();
 
     @Override
     public void crear(clienteModel clienteModel){
@@ -28,8 +28,7 @@ public class clienteDAOImpl implements clienteDAO {
         clienteModel existencia = leer(clienteModel.getId());
         if (existencia != null){
             existencia.setNombre(clienteModel.getNombre());
-            existencia.setNombre(clienteModel.getTelefono());
-            actualizar(existencia);
+            existencia.setTelefono(clienteModel.getTelefono());
         }
     }
 

@@ -20,6 +20,8 @@ public class menuFormulario extends JDialog{
         setLocationRelativeTo(null);
         setContentPane(panelmenu);
 
+        JOptionPane.showMessageDialog(null, "Solo se necesita el Id para Eliminar, el Id no se puede Actualizar", "Id: Agrega, Elimina, Actualiza", JOptionPane.INFORMATION_MESSAGE);
+JOptionPane.showMessageDialog(null, "Los mismos campos es para todo", "Id: Agrega, Elimina, Actualiza", JOptionPane.INFORMATION_MESSAGE);
         buttonClientes.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
